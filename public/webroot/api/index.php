@@ -101,13 +101,13 @@ function parse_Country_Data($country): CountryData
     $countryParsed->ac3 = $country->cca3;
     $countryParsed->flagPng = $country->flags->png;
     if (!isset($country->region)) {
-        $countryParsed->region = "???";
+        $countryParsed->region = "Unknown";
     } else {
         $countryParsed->region = $country->region;
     }
 
     if (!isset($country->subregion)) {
-        $countryParsed->subregion = "???";
+        $countryParsed->subregion = "Unknown";
     } else {
         $countryParsed->subregion = $country->subregion;
     }
