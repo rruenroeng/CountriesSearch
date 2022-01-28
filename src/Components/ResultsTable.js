@@ -4,7 +4,7 @@ const ResultsTable = (props) => {
   return (
     <div>
       <ul className="collection">
-        <li>{props.children}</li>
+        <div>{props.children}</div>
       </ul>
     </div>
   );
