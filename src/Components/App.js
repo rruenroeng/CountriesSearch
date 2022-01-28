@@ -65,7 +65,7 @@ class App extends React.Component {
   renderContent() {
     return (
       <div className="App">
-        <h3> Countries App</h3>
+        <h3> Countries Finder</h3>
         <div className="divider"></div>
         <div className="section">
           <CountriesSearch searchTitle="Search for a Country">
@@ -99,8 +99,8 @@ class App extends React.Component {
         </div>
         <div className="section">
           <h4>{this.state.lastSearchType} Results </h4>
+          {this.state.found === false && <h5>Sorry, no results.</h5>}
           <ResultsTable>
-            {this.state.found === false && <h5>Sorry, no results.</h5>}
             {this.state.countries.map((country, index) => (
               <CollectionResult
                 key={index}
