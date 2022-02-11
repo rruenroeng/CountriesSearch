@@ -30,7 +30,7 @@ class App extends React.Component {
 
   submitQuery = async (str) => {
     try {
-      let res = await fetch("http://localhost:8765/api/index.php", {
+      const res = await fetch("http://localhost:8765/api/index.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +39,7 @@ class App extends React.Component {
         mode: "cors",
       });
 
-      let jsonData = await res.json();
+      const jsonData = await res.json();
 
       if (jsonData.error) {
         let error = new Error();
@@ -132,7 +132,7 @@ class App extends React.Component {
                 {this.state.subregions &&
                   Object.keys(this.state.subregions).map((subregion, index) => (
                     <div key={index}>
-                      {subregion + ": " + this.state.subregions[subregion]}
+                      {`${subregion}:${this.state.subregions[subregion]}`}
                     </div>
                   ))}
               </div>
